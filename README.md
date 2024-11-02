@@ -1,4 +1,6 @@
 # ml_tutorial
+![image](doc/images/robots_animation.gif)
+
 
 # self supervised learning
 
