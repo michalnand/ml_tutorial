@@ -5,7 +5,8 @@ import numpy
 
 class DatasetMnist:
     def __init__(self, train = True):
-        self.input_shape = (1, 28, 28)
+        self.input_shape  = (1, 28, 28)
+        self.output_shape = (10, )
         self.data = torchvision.datasets.MNIST("./data/", train=train, download=True)
         
 
@@ -26,7 +27,6 @@ class DatasetMnist:
         x, y    = self.data[index]
         x       = numpy.array(x).astype(numpy.float32)
         x       = x/255.0
-
 
         return torch.from_numpy(x).unsqueeze(0), y
     
