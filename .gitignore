@@ -38,4 +38,5 @@ MANIFEST
 #loaded data
 data
 
-rl_robots.ipynb
+robot_train.ipynb
+robot_train.py
