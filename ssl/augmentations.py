@@ -10,7 +10,7 @@ def aug_random_apply(x, aug_func, p = 0.5):
 '''
 random gaussian noise
 '''
-def aug_noise(x, noise_max = 1.0):          
+def aug_noise(x, noise_max = 0.5):          
     alpha = noise_max*torch.rand((x.shape[0], 1, 1, 1), device=x.device)
     return (1.0 - alpha)*x + alpha*torch.randn_like(x)
    
