@@ -65,13 +65,14 @@ if __name__ == "__main__":
     # create initial features
     z_initial = 0.02*numpy.random.randn(n_points, n_dims)
 
-    numpy.save("results/initial", z_initial[:, 0:2])
 
 
+    k0 = 0.0
+    k1 = 1.0
 
-    k0 = 1.0
-    k1 = 0.0
-
+    z_trained = process_training(z_initial, 20, k0, k1)
+    
+    '''
     k0_values = [1.0, 1.0]
     k1_values = [0.0, 500.0]
     
@@ -83,7 +84,7 @@ if __name__ == "__main__":
         z_trained = process_training(z_initial, 20, k0, k1)
 
         numpy.save("results/" + str(k0) + "_" + str(k1), z_trained)
-
+    '''
 
     plt.plot(z_initial[:, 0], z_initial[:, 1], 'o', color='blue')
     plt.plot(z_trained[-1, :, 0], z_trained[-1, :, 1], 'o', color='red')

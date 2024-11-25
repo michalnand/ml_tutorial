@@ -12,7 +12,7 @@ random gaussian noise
 '''
 def aug_noise(x, noise_max = 0.5):          
     alpha = noise_max*torch.rand((x.shape[0], 1, 1, 1), device=x.device)
-    return (1.0 - alpha)*x + alpha*torch.randn_like(x)
+    return (1.0 - alpha)*x + alpha*torch.randn_like(x), alpha[:, :, 0, 0]
    
 '''
 negative
